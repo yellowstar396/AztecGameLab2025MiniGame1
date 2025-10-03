@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://lkyde6lbiakx"]
+[gd_scene load_steps=14 format=4 uid="uid://lkyde6lbiakx"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_gbn58"]
 [ext_resource type="TileSet" uid="uid://bmianx0xh2p6j" path="res://tileset.tres" id="1_ncmje"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ejyhrw0kelft" path="res://flowerAnom1.png" id="5_s2b7b"]
 [ext_resource type="Script" path="res://entrance.gd" id="6_6yxlh"]
 [ext_resource type="Texture2D" uid="uid://cwau2kljjqghd" path="res://ghostAnom1.png" id="6_ccchc"]
+[ext_resource type="AudioStream" uid="uid://bmak3u6m2ctp7" path="res://Spooky ghost noise(anomaly).wav" id="10_s4xgb"]
+[ext_resource type="AudioStream" uid="uid://b8uvhrpykldqi" path="res://Evil flower giggles evily (anomaly).wav" id="11_ve8sn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rd67y"]
 size = Vector2(16, 16)
@@ -86,6 +88,13 @@ visible = false
 position = Vector2(87, 57)
 scale = Vector2(0.0560466, 0.0560466)
 texture = ExtResource("6_ccchc")
+
+[node name="ghostScream" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(88, 88)
+stream = ExtResource("10_s4xgb")
+
+[node name="flowerGiggle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_ve8sn")
 
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
 [connection signal="body_entered" from="Entrance" to="Entrance" method="_on_body_entered"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmak3u6m2ctp7"
+path="res://.godot/imported/Spooky ghost noise(anomaly).wav-580d4e4084bd711d8e5c8a462ba0888c.sample"
+
+[deps]
+
+source_file="res://Spooky ghost noise(anomaly).wav"
+dest_files=["res://.godot/imported/Spooky ghost noise(anomaly).wav-580d4e4084bd711d8e5c8a462ba0888c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
