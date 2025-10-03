@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dorybast0y31v"
-path="res://.godot/imported/BGminilevel1.png-193e8f8cfbdbd1f717f320f17bca8c31.ctex"
+uid="uid://dhirkrql8e4mv"
+path="res://.godot/imported/start_button.png-a8479091b1c3f9eab4146da6692a27f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BGminilevel1.png"
-dest_files=["res://.godot/imported/BGminilevel1.png-193e8f8cfbdbd1f717f320f17bca8c31.ctex"]
+source_file="res://start_button.png"
+dest_files=["res://.godot/imported/start_button.png-a8479091b1c3f9eab4146da6692a27f5.ctex"]
 
 [params]
 

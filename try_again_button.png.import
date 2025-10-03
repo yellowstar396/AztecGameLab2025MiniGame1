@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlqud6lb1b3go"
-path="res://.godot/imported/Overlay.png-4446f3194cf79f5a1a7b8c151da9e404.ctex"
+uid="uid://bdenoc1jmqkya"
+path="res://.godot/imported/try_again_button.png-b11709902c930cf0ac6dadb3e94c372d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overlay.png"
-dest_files=["res://.godot/imported/Overlay.png-4446f3194cf79f5a1a7b8c151da9e404.ctex"]
+source_file="res://try_again_button.png"
+dest_files=["res://.godot/imported/try_again_button.png-b11709902c930cf0ac6dadb3e94c372d.ctex"]
 
 [params]
 

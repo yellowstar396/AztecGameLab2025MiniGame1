@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=4 uid="uid://lkyde6lbiakx"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_gbn58"]
+[ext_resource type="TileSet" uid="uid://bmianx0xh2p6j" path="res://tileset.tres" id="1_ncmje"]
+[ext_resource type="Script" path="res://player.gd" id="2_mr2i4"]
+[ext_resource type="Script" path="res://dark.gd" id="3_aiwgf"]
+[ext_resource type="Texture2D" uid="uid://raagxk3rbquh" path="res://player_art.png" id="4_cla80"]
+[ext_resource type="Script" path="res://exit.gd" id="4_xicam"]
+[ext_resource type="Texture2D" uid="uid://ejyhrw0kelft" path="res://flowerAnom1.png" id="5_s2b7b"]
+[ext_resource type="Script" path="res://entrance.gd" id="6_6yxlh"]
+[ext_resource type="Texture2D" uid="uid://cwau2kljjqghd" path="res://ghostAnom1.png" id="6_ccchc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rd67y"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb8hk"]
+size = Vector2(15, 15)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_gbn58")
+
+[node name="Grid" type="TileMapLayer" parent="."]
+position = Vector2(128, 96)
+tile_map_data = PackedByteArray("AAD4//r/AAABAAEAAAD4//v/AAABAAIAAAD5//r/AAACAAEAAAD5//v/AAAFAAAAAAD6//r/AAACAAEAAAD6//v/AAAGAAAAAAD7//r/AAACAAEAAAD7//v/AAAFAAAAAAD8//r/AAACAAEAAAD8//v/AAAGAAAAAAD9//r/AAACAAEAAAD9//v/AAAJAAIAAAD+//r/AAACAAEAAAD+//v/AAAGAAAAAAD///r/AAACAAEAAAD///v/AAAFAAAAAAAAAPr/AAACAAEAAAAAAPv/AAAGAAAAAAABAPr/AAACAAEAAAABAPv/AAAKAAEAAAD4//z/AAABAAIAAAD4//3/AAABAAIAAAD5//z/AAAFAAEAAAD5//3/AAAFAAAAAAD4//7/AAABAAIAAAD4////AAAHAAIAAAD5//7/AAAFAAEAAAD5////AAAFAAAAAAD4/wAAAAABAAIAAAD4/wEAAAABAAIAAAD5/wAAAAAFAAEAAAD5/wEAAAAFAAAAAAD4/wIAAAABAAIAAAD4/wMAAAABAAIAAAD5/wIAAAAFAAEAAAD5/wMAAAAFAAAAAAD6/wIAAAAGAAEAAAD6/wMAAAAGAAAAAAD7/wIAAAAFAAEAAAD7/wMAAAAHAAAAAAD8/wIAAAAGAAEAAAD8/wMAAAAIAAAAAAD9/wIAAAAFAAEAAAD9/wMAAAAFAAAAAAD+/wIAAAAGAAEAAAD+/wMAAAAGAAAAAAD//wIAAAAFAAEAAAD//wMAAAAHAAAAAAAAAAIAAAAGAAEAAAAAAAMAAAAIAAAAAAABAAIAAAAKAAQAAAABAAMAAAAHAAAAAAAAAAAAAAAGAAEAAAAAAAEAAAAGAAAAAAABAAAAAAAKAAIAAAABAAEAAAALAAIAAAAAAP7/AAAGAAEAAAAAAP//AAAGAAAAAAABAP7/AAAKAAQAAAABAP//AAAKAAEAAAAAAPz/AAAGAAEAAAAAAP3/AAAGAAAAAAABAPz/AAAKAAIAAAABAP3/AAALAAIAAAD+//z/AAAGAAEAAAD+//3/AAAGAAAAAAD///z/AAAFAAEAAAD///3/AAAFAAAAAAD8//z/AAAGAAEAAAD8//3/AAAGAAAAAAD9//z/AAAFAAEAAAD9//3/AAAFAAAAAAD6//z/AAAGAAEAAAD6//3/AAAGAAAAAAD7//z/AAAFAAEAAAD7//3/AAAFAAAAAAD6//7/AAAGAAEAAAD6////AAAGAAAAAAD7//7/AAAFAAEAAAD7////AAAFAAAAAAD8//7/AAAGAAEAAAD8////AAAGAAAAAAD9//7/AAAFAAEAAAD9////AAAFAAAAAAD+//7/AAAGAAEAAAD+////AAAGAAAAAAD///7/AAAFAAEAAAD/////AAAFAAAAAAD+/wAAAAAGAAEAAAD+/wEAAAAGAAAAAAD//wAAAAAFAAEAAAD//wEAAAAFAAAAAAD8/wAAAAAGAAEAAAD8/wEAAAAGAAAAAAD9/wAAAAAFAAEAAAD9/wEAAAAFAAAAAAD6/wAAAAAGAAEAAAD6/wEAAAAGAAAAAAD7/wAAAAAFAAEAAAD7/wEAAAAFAAAAAAD5/wQAAAACAAMAAAD6/wQAAAACAAMAAAD7/wQAAAACAAMAAAABAAQAAAACAAMAAAAAAAQAAAACAAMAAAD//wQAAAACAAMAAAD+/wQAAAACAAMAAAD9/wQAAAACAAMAAAD8/wQAAAACAAMAAAACAPv/AAADAAIAAAACAPz/AAADAAIAAAACAP3/AAADAAIAAAACAP7/AAADAAIAAAACAP//AAAFAAIAADACAAAAAAADAAIAAAACAAEAAAADAAIAAAACAAIAAAADAAIAAAACAAMAAAADAAIAAAACAAQAAAADAAMAAAACAPr/AAADAAEAAAD4/wQAAAABAAMAAAA=")
+tile_set = ExtResource("1_ncmje")
+
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("tilemap") groups=["player"]]
+position = Vector2(152, 88)
+script = ExtResource("2_mr2i4")
+tilemap = NodePath("../Grid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_rd67y")
+
+[node name="Sprite" type="ColorRect" parent="Player"]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+pivot_offset = Vector2(8, 8)
+color = Color(0.47451, 0, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("4_cla80")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+offset_right = 176.0
+offset_bottom = 176.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("3_aiwgf")
+
+[node name="Timer" type="Timer" parent="ColorRect"]
+one_shot = true
+autostart = true
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2(8, 88)
+script = ExtResource("4_xicam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+shape = SubResource("RectangleShape2D_vb8hk")
+
+[node name="TeleportTarget" type="Marker2D" parent="Exit"]
+position = Vector2(144, 0)
+
+[node name="Entrance" type="Area2D" parent="."]
+position = Vector2(168, 88)
+script = ExtResource("6_6yxlh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance"]
+shape = SubResource("RectangleShape2D_vb8hk")
+
+[node name="TeleportTarget" type="Marker2D" parent="Entrance"]
+position = Vector2(-16, 0)
+
+[node name="flowerAnom" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(153, 47)
+scale = Vector2(0.0337572, 0.0337572)
+texture = ExtResource("5_s2b7b")
+
+[node name="ghostAnom" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(87, 57)
+scale = Vector2(0.0560466, 0.0560466)
+texture = ExtResource("6_ccchc")
+
+[connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
+[connection signal="body_entered" from="Entrance" to="Entrance" method="_on_body_entered"]
